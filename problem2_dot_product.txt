@@ -1,0 +1,29 @@
+Procedure dot_product(v1: ARRAY[ ] OF REAL, v2: ARRAY[ ] OF REAL, VAR ps: REAL)
+VAR
+    i: INTEGER
+BEGIN
+    ps := 0
+    FOR i FROM 0 TO LENGTH(v1)-1 DO
+        ps := ps + v1[i] * v2[i]
+    END_FOR
+END
+
+Algorithm CheckOrthogonalVectors
+VAR
+    n : INTEGER
+    v1, v2 : ARRAY[ ] OF REAL
+    ps : REAL
+    i : INTEGER
+
+BEGIN
+    FOR i FROM 1 TO n DO
+        Read(v1)
+        Read(v2)
+        dot_product(v1, v2, ps)
+        IF ps = 0 THEN
+            Print("Vectors ", i, " are orthogonal")
+        ELSE
+            Print("Vectors ", i, " are not orthogonal")
+        END_IF
+    END_FOR
+END

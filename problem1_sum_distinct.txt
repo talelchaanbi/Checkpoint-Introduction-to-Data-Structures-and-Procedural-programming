@@ -1,0 +1,42 @@
+Algorithm SumDistinctElements
+// Problem 1: Sum of elements present in only one of the two sets
+
+VAR
+    set1, set2 : ARRAY[ ] OF INTEGER
+    sum : INTEGER
+    i, j : INTEGER
+    found : BOOLEAN
+
+BEGIN
+    sum := 0
+
+    // Add elements from set1 not in set2
+    FOR i FROM 0 TO LENGTH(set1)-1 DO
+        found := FALSE
+        FOR j FROM 0 TO LENGTH(set2)-1 DO
+            IF set1[i] = set2[j] THEN
+                found := TRUE
+                BREAK
+            END_IF
+        END_FOR
+        IF NOT found THEN
+            sum := sum + set1[i]
+        END_IF
+    END_FOR
+
+    // Add elements from set2 not in set1
+    FOR i FROM 0 TO LENGTH(set2)-1 DO
+        found := FALSE
+        FOR j FROM 0 TO LENGTH(set1)-1 DO
+            IF set2[i] = set1[j] THEN
+                found := TRUE
+                BREAK
+            END_IF
+        END_FOR
+        IF NOT found THEN
+            sum := sum + set2[i]
+        END_IF
+    END_FOR
+
+    Print("Sum of distinct elements: ", sum)
+END
