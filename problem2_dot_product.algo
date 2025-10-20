@@ -1,4 +1,4 @@
-Procedure dot_product(v1: ARRAY[ ] OF REAL, v2: ARRAY[ ] OF REAL, VAR ps: REAL)
+PROCEDURE dot_product(v1: ARRAY[ ] OF REAL, v2: ARRAY[ ] OF REAL, VAR ps: REAL)
 VAR
     i: INTEGER
 BEGIN
@@ -8,7 +8,7 @@ BEGIN
     END_FOR
 END
 
-Algorithm CheckOrthogonalVectors
+ALGORITHM CheckOrthogonalVectors
 VAR
     n : INTEGER
     v1, v2 : ARRAY[ ] OF REAL

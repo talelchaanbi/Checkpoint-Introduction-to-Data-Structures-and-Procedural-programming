@@ -1,13 +1,35 @@
-Algorithm SumDistinctElements
+ALGORITHM SumDistinctElements
 // Problem 1: Sum of elements present in only one of the two sets
 
 VAR
     set1, set2 : ARRAY[ ] OF INTEGER
-    sum : INTEGER
+    sum, n1, n2 : INTEGER
     i, j : INTEGER
     found : BOOLEAN
 
 BEGIN
+    // Saisie du premier tableau
+    Write("Entrez la taille du premier tableau: ")
+    Read(n1)
+    set1 := ARRAY[n1] OF INTEGER
+    
+    Write("Entrez les éléments du premier tableau:")
+    FOR i FROM 0 TO n1-1 DO
+        Write("Élément ", i+1, ": ")
+        Read(set1[i])
+    END_FOR
+    
+    // Saisie du deuxième tableau
+    Write("Entrez la taille du deuxième tableau: ")
+    Read(n2)
+    set2 := ARRAY[n2] OF INTEGER
+    
+    Write("Entrez les éléments du deuxième tableau:")
+    FOR i FROM 0 TO n2-1 DO
+        Write("Élément ", i+1, ": ")
+        Read(set2[i])
+    END_FOR
+    
     sum := 0
 
     // Add elements from set1 not in set2
