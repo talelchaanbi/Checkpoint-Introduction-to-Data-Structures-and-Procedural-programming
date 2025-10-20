@@ -1,4 +1,4 @@
-PROCEDURE dot_product(v1: ARRAY[ ] OF REAL, v2: ARRAY[ ] OF REAL, VAR ps: REAL)
+PROCEDURE dot_product(v1: ARRAY[ ] OF FLOAT, v2: ARRAY[ ] OF FLOAT, VAR ps: FLOAT)
 VAR
     i: INTEGER
 BEGIN
@@ -11,11 +11,11 @@ END
 ALGORITHM CheckOrthogonalVectors
 VAR
     n : INTEGER
-    v1, v2 : ARRAY[ ] OF REAL
-    ps : REAL
+    v1, v2 : ARRAY[ ] OF FLOAT
+    ps : FLOAT
     i : INTEGER
 
-BEGIN
+BEGIN   
     FOR i FROM 1 TO n DO
         Read(v1)
         Read(v2)
